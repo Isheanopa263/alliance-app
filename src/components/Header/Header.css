@@ -1,0 +1,331 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--gradient-header);
+  transition: var(--transition);
+}
+
+.header--scrolled {
+  background: var(--gradient-dark);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 0 190px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.header--scrolled .header__container {
+  height: 70px;
+  padding-left: 165px;
+}
+
+/* ==================== LOGO CARD ==================== */
+.header__logo {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  z-index: 10;
+}
+
+.header__logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 150px;
+  background: #ffffff;
+  border-radius: 0 0 18px 18px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: var(--transition);
+}
+
+.header--scrolled .header__logo a {
+  width: 110px;
+  height: 120px;
+  padding: 5px;
+}
+
+.header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .header__logo a {
+  background: var(--bg-card);
+}
+
+/* ==================== DESKTOP NAV ==================== */
+.header__nav {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__nav-link {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 4px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.header__nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+.header__nav-link:hover {
+  color: #ffffff;
+}
+
+.header__nav-link:hover::after {
+  width: 60%;
+}
+
+/* ==================== ACTIONS (Top Right) ==================== */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.header__cta {
+  padding: 11px 24px;
+  font-size: 0.9rem;
+  background: var(--primary-dark);
+  color: #ffffff;
+  border-color: var(--primary-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__cta::after {
+  content: "↘";
+  font-size: 0.9rem;
+}
+
+.header__cta:hover {
+  background: #ffffff;
+  color: var(--primary-dark);
+  border-color: #ffffff;
+}
+
+.header__hamburger {
+  display: none;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  align-items: center;
+  justify-content: center;
+}
+
+.header__hamburger:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ==================== MOBILE OVERLAY ==================== */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==================== MOBILE NAV POPUP ==================== */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: var(--gradient-dark);
+  z-index: 999;
+  padding: 70px 24px 30px;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-nav__close:hover {
+  background: rgba(123, 201, 74, 0.3);
+  color: var(--primary-light);
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mobile-nav__link {
+  display: block;
+  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.mobile-nav__link:hover {
+  background: rgba(123, 201, 74, 0.15);
+  color: var(--primary-light);
+  border-left-color: var(--primary-light);
+  padding-left: 20px;
+}
+
+/* CTA right after Contact Us */
+.mobile-nav__cta-item {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav__cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 20px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .header__container {
+    padding-left: 155px;
+    padding-right: 16px;
+  }
+
+  .header--scrolled .header__container {
+    padding-left: 135px;
+  }
+
+  /* Hide desktop nav */
+  .header__nav {
+    display: none;
+  }
+
+  /* Hide CTA button on mobile (will appear in popup) */
+  .header__cta {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .header__hamburger {
+    display: flex;
+  }
+
+  .header__logo a {
+    width: 100px;
+    height: 115px;
+    padding: 5px;
+  }
+
+  .header--scrolled .header__logo a {
+    width: 90px;
+    height: 100px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__container {
+    padding: 0 16px 0 110px;
+  }
+
+  .header--scrolled .header__container {
+    padding-left: 95px;
+  }
+
+  .header__logo {
+    left: 16px;
+  }
+
+  .header__logo a {
+    width: 85px;
+    height: 95px;
+    padding: 4px;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .header--scrolled .header__logo a {
+    width: 75px;
+    height: 85px;
+    padding: 3px;
+  }
+
+  .header__actions {
+    gap: 8px;
+  }
+
+  .header__hamburger {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

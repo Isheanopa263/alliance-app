@@ -1,0 +1,106 @@
+.about {
+  padding: 110px 0; /* ⬅️ Reduced from 110px */
+  background: var(--bg-secondary);
+}
+
+.about__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; /* ⬅️ Reduced from 70px */
+  align-items: center;
+}
+
+.about__image {
+  position: relative;
+}
+
+.about__img-inner {
+  width: 100%;
+  height: 420px; /* ⬅️ Reduced from 480px */
+  background: url("https://images.unsplash.com/photo-1638913662252-70efce1e60a7?w=900&q=85")
+    center/cover no-repeat;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.about__badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--primary-color);
+  color: #ffffff;
+  padding: 16px 20px; /* ⬅️ Reduced from 20px 24px */
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.about__badge-number {
+  display: block;
+  font-size: 1.7rem; /* ⬅️ Reduced from 2rem */
+  font-weight: 800;
+  font-family: var(--font-secondary);
+  line-height: 1;
+}
+
+.about__badge-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.95;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+}
+
+.about__stat {
+  text-align: center;
+}
+
+.about__stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: var(--font-secondary);
+  line-height: 1.2;
+}
+
+.about__stat-label {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .about__wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about__badge {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .about__img-inner {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__stats {
+    grid-template-columns: 1fr;
+  }
+}

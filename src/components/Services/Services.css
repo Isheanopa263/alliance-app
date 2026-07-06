@@ -1,0 +1,125 @@
+.services {
+  padding: 70px 0; /* ⬅️ Reduced from 110px */
+  background: var(--bg-primary);
+}
+
+.services__header {
+  margin-bottom: 40px; /* ⬅️ Reduced from 55px */
+}
+
+.services__header .section-title {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px; /* ⬅️ Reduced from 24px */
+}
+
+.service-card {
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  background: var(--bg-secondary);
+}
+
+.service-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--bg-tertiary) 0%,
+    var(--primary-lighter) 100%
+  );
+  padding: 30px; /* ⬅️ Reduced from 40px 30px */
+  min-height: 150px; /* ⬅️ Reduced from 180px */
+  transition: var(--transition);
+}
+
+.service-card--large .service-card__top {
+  min-height: 260px; /* ⬅️ Reduced from 320px */
+}
+
+.service-card__top img {
+  width: 75px; /* ⬅️ Reduced from 90px */
+  height: auto;
+  opacity: 0.55;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-card__top img {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.service-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px; /* ⬅️ Reduced from 20px 26px */
+  background: var(--primary-color);
+  color: #ffffff;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-card__bottom {
+  background: var(--primary-dark);
+}
+
+.service-card__bottom span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: var(--font-secondary);
+}
+
+.service-card__arrow {
+  color: #ffffff;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.service-card:hover .service-card__arrow {
+  transform: translateX(6px);
+}
+
+.services__small-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* ⬅️ Reduced from 24px */
+}
+
+.services__small-grid .service-card:last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card--large .service-card__top {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .services__small-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__small-grid .service-card:last-child {
+    grid-column: auto;
+  }
+}

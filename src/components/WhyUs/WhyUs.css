@@ -1,0 +1,84 @@
+.why-us {
+  padding: 70px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.why-us__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2.3fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.why-us__img-inner {
+  width: 110%;
+  height: 550px;
+  /* Modern corporate office building / glass facade */
+  background: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=85")
+    center/cover no-repeat;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.why-us__reason {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 15px 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.why-us__reason:hover {
+  border-left-color: var(--primary-color);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.why-us__reason-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-lighter);
+  color: var(--primary-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.why-us__reason:hover .why-us__reason-icon {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+.why-us__reason-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-family: var(--font-secondary);
+}
+
+.why-us__reason-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .why-us__wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .why-us__img-inner {
+    height: 340px;
+  }
+}
