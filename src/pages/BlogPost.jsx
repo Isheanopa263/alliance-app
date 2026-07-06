@@ -297,7 +297,7 @@ const BlogPost = () => {
                 <h3 className="sidebar-widget__title">About Alliance</h3>
                 <p className="sidebar-widget__text">
                   Alliance Asset Management is a Zimbabwean investment
-                  management firm dedicated to helping clients achieve long-term
+                  management firm dedicated to helping clients achieve long term
                   financial success.
                 </p>
                 <Link
