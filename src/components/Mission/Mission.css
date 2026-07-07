@@ -1,6 +1,7 @@
 .mission {
-  padding: 60px 0; /* ⬅️ Reduced from 80px */
+  padding: 70px 0;
   background: var(--bg-secondary);
+  margin: 0;
 }
 
 .mission__content {
@@ -10,8 +11,8 @@
 }
 
 .mission__icon {
-  width: 48px; /* ⬅️ Reduced from 52px */
-  height: 48px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,15 +20,15 @@
   color: #ffffff;
   border-radius: 50%;
   font-size: 1rem;
-  margin: 0 auto 24px; /* ⬅️ Reduced from 28px */
+  margin: 0 auto 26px;
 }
 
 .mission__text {
-  font-size: 1.6rem; /* ⬅️ Reduced from 1.85rem */
+  font-size: 1.7rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.5;
-  margin-bottom: 30px; /* ⬅️ Reduced from 36px */
+  margin: 0 0 32px 0;
   font-family: var(--font-secondary);
 }
 

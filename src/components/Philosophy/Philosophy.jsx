@@ -1,5 +1,6 @@
 import React from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import philosophyImg from "../../assets/images/philosophy.jpg";
 import "./Philosophy.css";
 
 const Philosophy = () => {
@@ -7,6 +8,10 @@ const Philosophy = () => {
 
   return (
     <section className="philosophy" id="philosophy" ref={ref}>
+      <div
+        className="philosophy__bg-pattern"
+        style={{ backgroundImage: `url(${philosophyImg})` }}
+      />
       <div className="container">
         <div className="philosophy__wrapper">
           <div className="philosophy__content animate-on-scroll">
@@ -38,7 +43,10 @@ const Philosophy = () => {
             </a>
           </div>
           <div className="philosophy__image animate-on-scroll animate-delay-2">
-            <div className="philosophy__img-inner" />
+            <div
+              className="philosophy__img-inner"
+              style={{ backgroundImage: `url(${philosophyImg})` }}
+            />
           </div>
         </div>
       </div>

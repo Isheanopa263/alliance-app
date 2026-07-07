@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import heroBg from "../../assets/images/hero.jpg";
 import "./Hero.css";
 
 const Hero = () => {
@@ -17,34 +18,36 @@ const Hero = () => {
 
   return (
     <section className="hero" id="hero">
-      <div className="hero__overlay" />
-      <div className="hero__content container">
-        <div className="hero__text">
-          <span className="hero__subtitle fade-up">
+      <div className="hero__bg" style={{ backgroundImage: `url(${heroBg})` }} />
+      <div className="hero__container">
+        <div className="hero__card fade-up">
+          <span className="hero__subtitle">
             Welcome to Alliance Asset Management
           </span>
-          <h1 className="hero__title fade-up fade-up--delay-1">
+          <h1 className="hero__title">
             We are Building Wealth Through Intelligent Investment Solutions
           </h1>
-          <p className="hero__description fade-up fade-up--delay-2">
+          <p className="hero__description">
             We help individuals, businesses, and institutions grow, preserve,
             and manage wealth through strategic investment solutions tailored to
             their financial goals.
           </p>
-          <div className="hero__buttons fade-up fade-up--delay-3">
+          <div className="hero__buttons">
             <a
               href="#about"
-              className="btn btn-primary"
+              className="btn btn-hero-primary"
               onClick={(e) => handleScrollClick(e, "#about")}
             >
               Discover More
+              <FontAwesomeIcon icon={faArrowRight} className="btn-icon" />
             </a>
             <a
               href="#contact"
-              className="btn btn-outline"
+              className="btn btn-hero-secondary"
               onClick={(e) => handleScrollClick(e, "#contact")}
             >
               Find An Advisor
+              <FontAwesomeIcon icon={faArrowRight} className="btn-icon" />
             </a>
           </div>
         </div>
@@ -55,8 +58,8 @@ const Hero = () => {
           onClick={(e) => handleScrollClick(e, "#offer")}
           aria-label="Scroll down"
         >
-          <FontAwesomeIcon icon={faChevronDown} className="hero__scroll-icon" />
           <span>Scroll Down</span>
+          <FontAwesomeIcon icon={faArrowDown} className="hero__scroll-icon" />
         </a>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import ctaImg from "../../assets/images/cta.jpg";
 import "./CTA.css";
 
 const CTA = () => {
@@ -7,6 +8,10 @@ const CTA = () => {
 
   return (
     <section className="cta" id="contact" ref={ref}>
+      <div
+        className="cta__bg-pattern"
+        style={{ backgroundImage: `url(${ctaImg})` }}
+      />
       <div className="container">
         <div className="cta__wrapper">
           <div className="cta__content animate-on-scroll">
@@ -33,7 +38,10 @@ const CTA = () => {
             </div>
           </div>
           <div className="cta__image animate-on-scroll animate-delay-2">
-            <div className="cta__img-inner" />
+            <div
+              className="cta__img-inner"
+              style={{ backgroundImage: `url(${ctaImg})` }}
+            />
           </div>
         </div>
       </div>

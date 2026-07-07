@@ -1,12 +1,13 @@
 .offer {
-  padding: 60px 0; /* ⬅️ Reduced from 80px */
+  padding: 70px 0;
   background: var(--bg-primary);
+  margin: 0;
 }
 
 .offer__wrapper {
   background: var(--primary-color);
   border-radius: 20px;
-  padding: 40px 35px; /* ⬅️ Reduced from 55px 45px */
+  padding: 45px 40px;
   box-shadow: var(--shadow-lg);
   background-image: linear-gradient(
     135deg,
@@ -16,29 +17,29 @@
 }
 
 .offer__heading {
-  font-size: 1.5rem; /* ⬅️ Reduced from 1.7rem */
+  font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 28px; /* ⬅️ Reduced from 40px */
+  margin: 0 0 32px 0;
   font-family: var(--font-secondary);
 }
 
 .offer__grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px; /* ⬅️ Reduced from 20px */
+  gap: 18px;
 }
 
 .offer__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* ⬅️ Reduced from 14px */
+  gap: 12px;
   text-align: center;
-  padding: 20px 15px; /* ⬅️ Reduced from 30px 20px */
+  padding: 24px 18px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  border-radius: 12px; /* ⬅️ Reduced from 14px */
+  border-radius: 12px;
   cursor: pointer;
   transition: var(--transition);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -47,20 +48,20 @@
 .offer__item:hover {
   background: rgba(255, 255, 255, 0.95);
   border-color: rgba(255, 255, 255, 0.95);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .offer__icon {
-  width: 48px; /* ⬅️ Reduced from 64px */
-  height: 48px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
   border-radius: 12px;
-  font-size: 1.2rem; /* ⬅️ Reduced from 1.5rem */
+  font-size: 1.3rem;
   transition: var(--transition);
 }
 
@@ -71,11 +72,12 @@
 }
 
 .offer__label {
-  font-size: 0.88rem; /* ⬅️ Reduced from 0.95rem */
+  font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;
   font-family: var(--font-secondary);
   transition: var(--transition);
+  margin: 0;
 }
 
 .offer__item:hover .offer__label {

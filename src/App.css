@@ -8,10 +8,46 @@
   box-sizing: border-box;
 }
 
-/* ==================== LIGHT THEME (Default) ==================== */
+/* ==================== FIX WHITE GAPS ==================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+/* ==================== LIGHT THEME ==================== */
 :root,
 [data-theme="light"] {
-  /* Brand Colors - Green Theme */
   --primary-color: #5fa830;
   --primary-dark: #3d7a1c;
   --primary-light: #7bc94a;
@@ -20,37 +56,31 @@
   --accent-color: #4a8a25;
   --accent-hover: #3d7a1c;
 
-  /* Backgrounds */
   --bg-primary: #ffffff;
   --bg-secondary: #f8faf5;
   --bg-tertiary: #eef5e3;
   --bg-dark: #1a2e0d;
   --bg-card: #ffffff;
 
-  /* Text */
   --text-primary: #1a2e0d;
   --text-secondary: #4a5a3a;
   --text-tertiary: #7a8a6a;
   --text-on-dark: #ffffff;
   --text-on-primary: #ffffff;
 
-  /* Borders */
   --border-color: #e0e8d4;
   --border-hover: #5fa830;
 
-  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #5fa830 0%, #4a8a25 100%);
   --gradient-dark: linear-gradient(135deg, #2d5016 0%, #1a2e0d 100%);
   --gradient-light: linear-gradient(135deg, #f8faf5 0%, #eef5e3 100%);
   --gradient-header: linear-gradient(135deg, #5fa830 0%, #4a8a25 100%);
 
-  /* Shadows */
   --shadow-sm: 0 2px 8px rgba(95, 168, 48, 0.08);
   --shadow-md: 0 4px 20px rgba(95, 168, 48, 0.12);
   --shadow-lg: 0 10px 40px rgba(95, 168, 48, 0.18);
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
 
-  /* Other */
   --transition: all 0.3s ease;
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Inter Tight", sans-serif;
@@ -58,7 +88,6 @@
 
 /* ==================== DARK THEME ==================== */
 [data-theme="dark"] {
-  /* Brand Colors - Adjusted for dark */
   --primary-color: #7bc94a;
   --primary-dark: #5fa830;
   --primary-light: #9dd96b;
@@ -67,31 +96,26 @@
   --accent-color: #7bc94a;
   --accent-hover: #9dd96b;
 
-  /* Backgrounds */
   --bg-primary: #0f1812;
   --bg-secondary: #1a2418;
   --bg-tertiary: #243020;
   --bg-dark: #0a0f0a;
   --bg-card: #1e2a1c;
 
-  /* Text */
   --text-primary: #e8f0e0;
   --text-secondary: #b8c8a8;
   --text-tertiary: #889878;
   --text-on-dark: #ffffff;
   --text-on-primary: #0f1812;
 
-  /* Borders */
   --border-color: #2d3d24;
   --border-hover: #7bc94a;
 
-  /* Gradients */
   --gradient-primary: linear-gradient(135deg, #5fa830 0%, #4a8a25 100%);
   --gradient-dark: linear-gradient(135deg, #0f1812 0%, #1a2418 100%);
   --gradient-light: linear-gradient(135deg, #1a2418 0%, #243020 100%);
   --gradient-header: linear-gradient(135deg, #1a2418 0%, #243020 100%);
 
-  /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6);
@@ -112,6 +136,8 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -154,7 +180,7 @@ ul {
 
 .btn-primary {
   background: var(--primary-color);
-  color: var(--text-on-primary);
+  color: #ffffff;
   border-color: var(--primary-color);
 }
 
@@ -163,7 +189,7 @@ ul {
   border-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(95, 168, 48, 0.4);
-  color: var(--text-on-primary);
+  color: #ffffff;
 }
 
 .btn-outline {
@@ -186,7 +212,7 @@ ul {
 
 .btn-outline-dark:hover {
   background: var(--primary-color);
-  color: var(--text-on-primary);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
@@ -264,24 +290,4 @@ ul {
 }
 .animate-delay-5 {
   transition-delay: 0.5s;
-}
-/* ==================== MAIN CONTENT SPACING ==================== */
-.main-content {
-  /* Account for fixed header height */
-  padding-top: 80px;
-}
-
-/* Hero already has full-height background, so reset its padding */
-.main-content > .hero {
-  margin-top: -80px;
-  padding-top: 80px;
-}
-
-/* Blog post page needs spacing from header */
-.main-content > .blog-post {
-  padding-top: 0;
-}
-
-.blog-post__hero {
-  margin-top: 0 !important;
 }

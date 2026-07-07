@@ -1,5 +1,6 @@
 import React from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import aboutImg from "../../assets/images/about.jpg";
 import "./About.css";
 
 const About = () => {
@@ -10,7 +11,10 @@ const About = () => {
       <div className="container">
         <div className="about__wrapper">
           <div className="about__image animate-on-scroll">
-            <div className="about__img-inner" />
+            <div
+              className="about__img-inner"
+              style={{ backgroundImage: `url(${aboutImg})` }}
+            />
             <div className="about__badge">
               <span className="about__badge-number">15+</span>
               <span className="about__badge-text">Years of Excellence</span>

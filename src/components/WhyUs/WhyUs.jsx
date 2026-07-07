@@ -7,6 +7,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import whyUsImg from "../../assets/images/whyus.jpg";
 import "./WhyUs.css";
 
 const reasons = [
@@ -40,7 +41,10 @@ const WhyUs = () => {
       <div className="container">
         <div className="why-us__wrapper">
           <div className="why-us__image animate-on-scroll">
-            <div className="why-us__img-inner" />
+            <div
+              className="why-us__img-inner"
+              style={{ backgroundImage: `url(${whyUsImg})` }}
+            />
           </div>
           <div className="why-us__content animate-on-scroll animate-delay-2">
             <span className="section-label">
@@ -53,9 +57,6 @@ const WhyUs = () => {
               At Alliance Asset Management, we are committed to helping our
               clients achieve their financial goals through expert investment
               management, personalized advice, and disciplined risk management.
-              Our client-focused approach, market expertise, and dedication to
-              delivering long-term value make us a trusted partner for
-              individuals, businesses, and institutions.
             </p>
             <div className="why-us__reasons">
               {reasons.map(({ icon, title, text }) => (
