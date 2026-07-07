@@ -23,24 +23,26 @@ const Offer = () => {
 
   return (
     <section className="offer" id="offer" ref={ref}>
-      <div className="container">
-        <div className="offer__wrapper animate-on-scroll">
-          <div className="offer__header">
-            <h3 className="offer__heading">What can we offer you today?</h3>
-          </div>
-          <div className="offer__grid">
-            {offerItems.map(({ icon, label }, i) => (
-              <div
-                key={label}
-                className={`offer__item animate-on-scroll animate-delay-${i + 1}`}
-              >
-                <div className="offer__icon">
-                  <FontAwesomeIcon icon={icon} />
-                </div>
-                <h4 className="offer__label">{label}</h4>
+      <div className="offer__wrapper animate-on-scroll">
+        {/* Dark green heading card */}
+        <div className="offer__heading-card">
+          <h3 className="offer__heading">
+            What can we offer
+            <br />
+            you today?
+          </h3>
+        </div>
+
+        {/* Light green items */}
+        <div className="offer__items">
+          {offerItems.map(({ icon, label }, i) => (
+            <div key={label} className={`offer__item offer__item--${i}`}>
+              <div className="offer__icon">
+                <FontAwesomeIcon icon={icon} />
               </div>
-            ))}
-          </div>
+              <h4 className="offer__label">{label}</h4>
+            </div>
+          ))}
         </div>
       </div>
     </section>
