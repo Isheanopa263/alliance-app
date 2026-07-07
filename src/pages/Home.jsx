@@ -17,10 +17,8 @@ const Home = () => {
       <Mission />
       <About />
       <Services />
-      <ZimEconomy />
       <Philosophy />
       <WhyUs />
-      <Stats />
       <Insights />
       <CTA />
     </div>
