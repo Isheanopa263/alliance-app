@@ -4,13 +4,11 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Check localStorage first, then system preference
+    // Check localStorage first
     const saved = localStorage.getItem("alliance-theme");
     if (saved) return saved;
 
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
+    // Default to LIGHT mode (don't inherit from system)
     return "light";
   });
 

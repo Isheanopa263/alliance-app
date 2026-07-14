@@ -3,6 +3,7 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import allianceLogo from "../../assets/images/alliance-logo.png"; // Add this import
 import "./Header.css";
 
 const navItems = [
@@ -62,6 +63,21 @@ const Header = () => {
     }
   };
 
+  // Handle logo click - navigate home and scroll to top
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+
+    if (location.pathname === "/") {
+      // Already on home, just scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to home
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  };
+
   useEffect(() => {
     if (location.pathname === "/" && location.hash) {
       setTimeout(() => {
@@ -82,15 +98,11 @@ const Header = () => {
       <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
         <div className="header__container">
           <div className="header__logo">
-            <Link to="/">
-              <img
-                src="https://zwhost.co.zw/projects/alliance/wp-content/uploads/2023/04/alliance-logo-scaled.png"
-                alt="Alliance Asset Management"
-              />
+            <Link to="/" onClick={handleLogoClick}>
+              <img src={allianceLogo} alt="Alliance Asset Management" />
             </Link>
           </div>
 
-          {/* Desktop Nav */}
           <nav className="header__nav" aria-label="Main navigation">
             <ul className="header__nav-list">
               {navItems.map(({ label, href }) => (
@@ -107,7 +119,6 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Right Side Actions */}
           <div className="header__actions">
             <ThemeToggle />
             <a
@@ -128,13 +139,11 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Overlay */}
       <div
         className={`mobile-overlay ${mobileOpen ? "active" : ""}`}
         onClick={() => setMobileOpen(false)}
       />
 
-      {/* Mobile Nav Popup */}
       <nav className={`mobile-nav ${mobileOpen ? "active" : ""}`}>
         <button
           className="mobile-nav__close"
@@ -154,7 +163,6 @@ const Header = () => {
               </a>
             </li>
           ))}
-          {/* Get Started right after Contact Us */}
           <li className="mobile-nav__cta-item">
             <a
               href="#contact"
