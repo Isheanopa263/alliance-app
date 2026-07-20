@@ -1,10 +1,12 @@
 import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
   faEnvelope,
   faPhone,
   faSquare,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedinIn,
@@ -12,9 +14,21 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import allianceLogo from "../../assets/images/alliance-logo.png";
 import "./Footer.css";
 
-const services = ["Equities", "Money Market", "Advisory", "Investments"];
+// Quick links in page order
+const quickLinks = [
+  { label: "The Firm", href: "#hero" },
+  { label: "About Us", href: "#about" },
+  { label: "What We Do", href: "#services" },
+  { label: "Insights", href: "#insights" },
+  { label: "Advisory", href: "#philosophy" },
+  { label: "Contact Us", href: "#contact" },
+];
+
+// Services list
+const servicesList = ["Equities", "Money Market", "Advisory", "Investments"];
 
 const socialLinks = [
   { icon: faLinkedinIn, label: "LinkedIn", href: "#" },
@@ -25,10 +39,19 @@ const socialLinks = [
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    const target = document.querySelector(href);
+
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
+
+    const targetId = href.replace("#", "");
+    const target = document.getElementById(targetId);
     if (target) {
       const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({ top, behavior: "smooth" });
@@ -42,10 +65,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer__banner-inner">
             <div className="footer__logo">
-              <img
-                src="https://zwhost.co.zw/projects/alliance/wp-content/uploads/2023/04/alliance-logo-1024x670.png"
-                alt="Alliance Asset Management"
-              />
+              <img src={allianceLogo} alt="Alliance Asset Management" />
             </div>
             <div className="footer__banner-cta">
               <h2 className="footer__banner-title">
@@ -78,19 +98,19 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Services */}
+            {/* Quick Links - In Page Order */}
             <div className="footer__col">
-              <h3 className="footer__col-title">Services</h3>
+              <h3 className="footer__col-title">Quick Links</h3>
               <div className="footer__divider" />
               <ul className="footer__links">
-                {services.map((service) => (
-                  <li key={service}>
-                    <a href="#">
+                {quickLinks.map(({ label, href }) => (
+                  <li key={label}>
+                    <a href={href} onClick={(e) => handleNavClick(e, href)}>
                       <FontAwesomeIcon
-                        icon={faSquare}
+                        icon={faChevronRight}
                         className="footer__link-icon"
                       />
-                      {service}
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -120,7 +140,28 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Social */}
+            <div className="footer__col">
+              <h3 className="footer__col-title">Our Services</h3>
+              <div className="footer__divider" />
+              <ul className="footer__links">
+                {servicesList.map((service) => (
+                  <li key={service}>
+                    <a
+                      href="#services"
+                      onClick={(e) => handleNavClick(e, "#services")}
+                    >
+                      <FontAwesomeIcon
+                        icon={faSquare}
+                        className="footer__link-icon footer__link-icon--small"
+                      />
+                      {service}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Follow Us */}
             <div className="footer__col">
               <h3 className="footer__col-title">Follow Us</h3>
               <div className="footer__divider" />

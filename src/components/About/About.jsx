@@ -15,10 +15,6 @@ const About = () => {
               className="about__img-inner"
               style={{ backgroundImage: `url(${aboutImg})` }}
             />
-            <div className="about__badge">
-              <span className="about__badge-number">15+</span>
-              <span className="about__badge-text">Years of Excellence</span>
-            </div>
           </div>
           <div className="about__content animate-on-scroll animate-delay-2">
             <span className="section-label">About Us</span>
@@ -32,20 +28,7 @@ const About = () => {
               strategies, and personalized financial guidance to create
               solutions that align with our clients' objectives.
             </p>
-            <div className="about__stats">
-              <div className="about__stat">
-                <span className="about__stat-number">500+</span>
-                <span className="about__stat-label">Clients Served</span>
-              </div>
-              <div className="about__stat">
-                <span className="about__stat-number">$50M+</span>
-                <span className="about__stat-label">Assets Managed</span>
-              </div>
-              <div className="about__stat">
-                <span className="about__stat-number">98%</span>
-                <span className="about__stat-label">Client Retention</span>
-              </div>
-            </div>
+
             <a href="#" className="btn btn-primary">
               More About Us
             </a>

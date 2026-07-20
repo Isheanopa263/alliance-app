@@ -249,7 +249,7 @@
   .hero {
     min-height: auto;
     padding-top: 0;
-    display: block; /* Remove flex */
+    display: block;
     overflow: visible;
   }
 
@@ -260,9 +260,9 @@
     left: 0;
     right: 0;
     bottom: auto;
-    height: 520px;
+    height: 620px;
     width: 100%;
-    margin-top: 80px; /* Space for fixed header */
+    margin-top: 80px;
     display: block;
   }
 
@@ -290,7 +290,7 @@
 
   /* Card takes full width below image */
   .hero__card {
-    padding: 22px 14px 30px;
+    padding: 18px 10px 20px;
     max-width: 100%;
     width: 100%;
     border-radius: 16px;
@@ -335,7 +335,7 @@
 
 @media (max-width: 480px) {
   .hero__bg {
-    height: 250px;
+    height: 295px;
   }
 
   .hero__title {

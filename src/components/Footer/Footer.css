@@ -171,6 +171,18 @@
   color: rgba(255, 255, 255, 0.45);
   font-size: 0.83rem;
 }
+.footer__services-title {
+  margin-top: 28px;
+}
+
+.footer__link-icon {
+  font-size: 0.5rem;
+  transition: var(--transition);
+}
+
+.footer__link-icon--small {
+  font-size: 0.35rem;
+}
 
 @media (max-width: 1024px) {
   .footer__columns {

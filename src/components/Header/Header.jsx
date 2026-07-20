@@ -3,14 +3,16 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import allianceLogo from "../../assets/images/alliance-logo.png"; // Add this import
+import allianceLogo from "../../assets/images/alliance-logo.png";
 import "./Header.css";
 
+// ⬇️ Updated nav items in correct page order
 const navItems = [
   { label: "The Firm", href: "#hero" },
+  { label: "About Us", href: "#about" },
   { label: "What We Do", href: "#services" },
-  { label: "Insights", href: "#insights" },
   { label: "Advisory", href: "#philosophy" },
+  { label: "Insights", href: "#insights" },
   { label: "Contact Us", href: "#contact" },
 ];
 
@@ -63,16 +65,13 @@ const Header = () => {
     }
   };
 
-  // Handle logo click - navigate home and scroll to top
   const handleLogoClick = (e) => {
     e.preventDefault();
     setMobileOpen(false);
 
     if (location.pathname === "/") {
-      // Already on home, just scroll to top
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Navigate to home
       navigate("/");
       window.scrollTo({ top: 0, behavior: "instant" });
     }

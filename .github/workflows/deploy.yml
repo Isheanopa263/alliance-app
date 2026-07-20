@@ -3,16 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Change to 'master' if that's your default branch
-  workflow_dispatch: # Allow manual trigger
+      - main
+  workflow_dispatch:
 
-# Grant necessary permissions
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Prevent multiple deployments at the same time
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -37,7 +35,8 @@ jobs:
       - name: Build React app
         run: npm run build
         env:
-          CI: false # Prevents warnings from being treated as errors
+          CI: false
+          PUBLIC_URL: /alliance-app # ⬅️ Set only for GitHub Pages
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
